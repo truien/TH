@@ -1,11 +1,10 @@
 <?php
-// menu.php
 $items = [
   'Trang chủ'             => 'home.php',
-  'Tin tức'               => 'news.php',
-  'Lịch tuần'             => 'schedule.php',
-  'Văn bản'               => 'documents.php',
-  'Hoạt động sinh viên'   => 'activities.php',
+  'Tin tức'               => 'home.php',
+  'Lịch tuần'             => 'home.php',
+  'Văn bản'               => 'home.php',
+  'Hoạt động sinh viên'   => 'home.php',
 ];
 ?>
 <nav style="background:#004080; padding:10px;">

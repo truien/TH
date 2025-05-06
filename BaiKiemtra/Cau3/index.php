@@ -29,16 +29,18 @@
             text-align: left;
         }
         th{
-            background-color: #4CAF50;
+            background-color: #4CAF50 !important;
             color: white;
         }
     </style>
 </head>
-<body class="container">
+<body class="container my-2">
+    <h2 class="text-center py-3">Quản lý sinh viên</h2>
     <div class="mt-5">
-        <h2 class="text-center">Danh sách sinh viên</h2>
         <table class="table table-bordered">
             <thead>
+                <tr>
+                    <th colspan="5" class="text-center">Danh sách sinh viên</th>
                 <tr>
                     <th>MSSV</th>
                     <th>Mã khoa viện</th>
@@ -66,9 +68,10 @@
             </tbody>
     </div>
     <div class="mt-5">
-        <h2 class="text-center">Danh sách khoa viện</h2>
         <table class="table table-bordered">
             <thead>
+                <tr>
+                    <th colspan="5" class="text-center">Danh sách khoa viện</th>
                 <tr>
                     <th>Mã khoa viện</th>
                     <th>Tên khoa viện</th>
@@ -86,7 +89,7 @@
                             echo "<td>".$row['TenKhoaVien']."</td>";
                             echo "<td>".$row['Phone']."</td>";
                             echo "<td>".$row['Email']."</td>";
-                            echo "<td><a href='editKhoa.php?id=".$row['MaKhoaVien']."' class='btn btn-primary'>Sửa</a></td>";
+                            echo "<td><a href='editKhoa.php?makhoavien=".$row['MaKhoaVien']."' class='btn btn-primary'>Sửa</a></td>";
                             echo "</tr>";
                         }
                     }else{
@@ -94,6 +97,10 @@
                     }
                 ?>
             </tbody>
+                </table>
+    </div>
+    <div>
+    <button class= "btn btn-success " ><a href="./DeleteSV.php" style=" text-decoration: none;color:black;">Xóa sinh viên ngành luật</a></button>
     </div>
 </body>
 </html>

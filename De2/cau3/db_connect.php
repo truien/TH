@@ -2,7 +2,7 @@
 $host   = 'localhost';
 $user   = 'root';
 $pass   = 'admin';
-$dbname = 'DHV';
+$dbname = 'quanlysv';
 $conn = new mysqli($host,$user,$pass,$dbname);
 if($conn ->connect_error){
     die('Connect Error: '>$conn->connect_error);

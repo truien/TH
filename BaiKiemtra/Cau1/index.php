@@ -1,23 +1,33 @@
 <?php
-function tinhtong($n){
-    $sum = 0;
-    for ($i=0; $i <$n ; $i++) { 
-        if($i%2 != 0){
-            $sum += $i;
+    function tinhtongle($n){
+        $tong = 0;
+        for($i=1; $i<=$n; $i++){
+            if($i%2!=0){
+                $tong += $i;
+            }
         }
+        return $tong;
     }
-    return $sum;
-}
-$result = [];
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $n = $_POST['n'];
-    if ($n<2) {
-        $result[] = "Vui lòng nhập số lớn hơn 2";
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $n = $_POST["n"];
+        $result = array();
+        if($n >= 2){
+            $tongle = tinhtongle($n);
+            $result[] = "Tổng các số lẻ từ 1 đến $n là: $tongle";
+        } else {
+            $result[] = "Vui lòng nhập một số n lớn hơn 2.";
+        }
     } else {
-        $result[] = "Tổng số lẻ từ 1 đến ".$n. " là: ". tinhtong($n);
+        $result = array();
     }
-}
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu 1</title>
+</head>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,3 +55,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <?php endif; ?>
         </div>
 </body>
+</html>

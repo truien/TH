@@ -1,6 +1,6 @@
 <?php
     require_once('./db_connect.php');
-    $makv = $_GET['id'];
+    $makv = $_GET['makhoavien'];
     $sql = "SELECT * FROM khoavien WHERE MaKhoaVien='$makv'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
@@ -80,7 +80,7 @@
 <body>
     <div class="container">
         <h2 class="text-center">Cập nhật thông tin khoa viện</h2>
-        <form method="POST" action="editKhoa.php?id=<?php echo $makv; ?>">
+        <form method="POST" action="editKhoa.php?makhoavien=<?php echo $makv; ?>">
             <div class="form-group">
                 <label for="makhoavien">Mã khoa viện:</label>
                 <input type="text" class="form-control" id="makhoavien" name="makhoavien" value="<?php echo $row['MaKhoaVien']; ?>" readonly>
