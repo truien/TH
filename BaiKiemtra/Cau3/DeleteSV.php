@@ -9,7 +9,9 @@
             echo "<script>alert('Xóa thất bại!');</script>";
         }
     }
-    $sql = "SELECT * FROM sinhvien WHERE MaKhoaVien='NLH'";
+    $sql = "SELECT * FROM sinhvien 
+    INNER JOIN khoavien ON sinhvien.MaKhoaVien = khoavien.MaKhoaVien    
+    WHERE khoavien.TenKhoaVien = 'Ngành Luật Học'";
     $resultSv = $conn->query($sql);
 
     ?>
